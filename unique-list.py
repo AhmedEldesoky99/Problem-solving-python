@@ -7,19 +7,21 @@ Write a Python function that takes a list and returns a new list with unique ele
 """
 
 def unique_list(lst:list):
-    myset = set()
-    mylist = []
-
-    for item in lst:
-        myset.add(item)
-
-    for item in myset:
-        mylist.append(item)
-    
-    print(mylist)
+   return list(set(lst))
 
 
-unique_list([1,1,1,1,2,2,3,3,3,3,4,5])
-    
+result = unique_list([1,1,1,1,2,2,3,3,3,3,4,5])
+print(result)
 
-    
+
+#another solution 
+def unique_list(lst:list):
+    seen_number = []
+    for num in lst:
+        if num not in seen_number:
+            seen_number.append(num)
+
+    return seen_number
+
+result = unique_list([1,1,1,1,2,2,3,3,3,3,4,5])
+print(result)
